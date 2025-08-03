@@ -59,9 +59,9 @@ function NestedItem({ link }: { link: INavigationLinks }) {
       >
         <Button
           sx={{
-            fontSize: { md: "13px" },
+            fontSize: { md: "13px", lg: "15px" },
             textTransform: "capitalize",
-            fontWeight: "semibold",
+            fontWeight: "bold",
             color: "rgba(0,0,0,0.7)",
             width: "100%",
             "&:hover": {

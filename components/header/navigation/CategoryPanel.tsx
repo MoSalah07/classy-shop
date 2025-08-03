@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { NAVIGATION_LINKS } from "@/constant/data";
 import CategoryLinks from "./CategoryLinks";
+import { useLocale } from "next-intl";
 
 interface Props {
   open: boolean;
@@ -14,6 +15,7 @@ interface Props {
 
 export default function CategoryPanel({ open, toggleDrawer }: Props) {
   const [openRootTitle, setOpenRootTitle] = useState<string | null>(null);
+  const locale = useLocale();
 
   const DrawerList = (
     <Box sx={{ width: 250, px: 2, py: 1 }} role="presentation">
@@ -55,7 +57,11 @@ export default function CategoryPanel({ open, toggleDrawer }: Props) {
   );
 
   return (
-    <Drawer open={open} onClose={toggleDrawer(false)}>
+    <Drawer
+      anchor={locale === "ar" ? "right" : "left"}
+      open={open}
+      onClose={toggleDrawer(false)}
+    >
       {DrawerList}
     </Drawer>
   );

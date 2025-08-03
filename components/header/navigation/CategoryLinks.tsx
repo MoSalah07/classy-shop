@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import { INavigationLinks } from "@/types/data.type";
 import { FaRegSquarePlus } from "react-icons/fa6";
 import { FaMinusSquare } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   link: INavigationLinks;
@@ -26,6 +27,7 @@ interface CategoryItemProps {
 function CategoryItem({ link, isOpen, onToggle, depth }: CategoryItemProps) {
   const hasNested = !!link.nested?.length;
   const [openChildTitle, setOpenChildTitle] = useState<string | null>(null);
+  const t = useTranslations("header");
 
   const toggleChild = (title: string) => {
     setOpenChildTitle((prev) => (prev === title ? null : title));
@@ -33,28 +35,21 @@ function CategoryItem({ link, isOpen, onToggle, depth }: CategoryItemProps) {
 
   return (
     <li className="flex flex-col w-full">
-      <div className="flex items-center relative">
-        <Button
-          onClick={onToggle}
-          className={`w-full !text-left !justify-start !px-3 !text-[rgba(0,0,0,0.7)]`}
-          style={{ paddingLeft: `${depth * 8 + 4}px` }}
-        >
-          {link.title}
-        </Button>
-
+      <Button
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggle();
+        }}
+        className={`w-full !justify-between !text-left !text-base !px-3 !text-[rgba(0,0,0,0.7)] hover:bg-gray-200`}
+        style={{ paddingLeft: `${depth * 12 + 8}px` }}
+      >
+        <span>{t(link.title)}</span>
         {hasNested && (
-          <Button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              onToggle();
-            }}
-            className="absolute right-2 !text-gray-700 !hover:text-black"
-          >
+          <span className="text-base text-gray-700 hover:text-black">
             {isOpen ? <FaMinusSquare /> : <FaRegSquarePlus />}
-          </Button>
+          </span>
         )}
-      </div>
+      </Button>
 
       {isOpen && hasNested && (
         <ul
