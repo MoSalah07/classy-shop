@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ Classy-Shop
 
-## Getting Started
+**Classy-Shop** is a modern e-commerce application built with [Next.js 15](https://nextjs.org/) and supports full internationalization using [next-intl](https://next-intl-docs.vercel.app/). The site is responsive, multilingual (Arabic & English), and includes a custom-built dashboard with recursive nested menus.
 
-First, run the development server:
+---
+
+## 🔥 Features
+
+- ✅ Fully responsive layout (Mobile, Tablet, Desktop)
+- 🌐 Multi-language support (Arabic 🇸🇦 and English 🇺🇸)
+- ⚙️ Dashboard with nested, recursive menus
+- 🧭 Dynamic header with language switcher
+- 🧩 Built using Tailwind CSS & Material UI
+- 🚀 Fast, optimized, and ready for production
+- 📦 Structured for scalability and future integration
+
+---
+
+## 📸 Preview
+
+> You can add screenshots or a live demo link here in the future.
+
+---
+
+## 🧱 Tech Stack
+
+| Tech              | Description                             |
+| ----------------- | --------------------------------------- |
+| Next.js 15        | React framework with SSR & App Router   |
+| next-intl         | Internationalization and locale routing |
+| Tailwind CSS      | Utility-first CSS for custom styling    |
+| Material UI (MUI) | UI components and icons                 |
+| TypeScript        | Type-safe development                   |
+
+---
+
+## 📁 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+.
+├── app/
+│   └── [locale]/          # Internationalized routes
+│       ├── layout.tsx
+│       ├── page.tsx
+│       └── ...
+├── components/            # Shared components
+│   └── header/
+│       ├── NavBar.tsx
+│       └── LangSwitcher.tsx
+├── dashboard/             # Admin dashboard
+│   └── admin/
+├── messages/              # Locale translation files
+│   ├── en.json
+│   └── ar.json
+├── public/                # Static assets
+├── styles/                # Global styling if needed
+├── constants/             # App constants (currency, links, etc.)
+├── store/                 # Zustand or other state management
+├── middleware.ts          # Locale detection middleware
+└── README.md
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

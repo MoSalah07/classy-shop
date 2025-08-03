@@ -1,0 +1,6 @@
+.search_box input::placeholder,
+.search_box input::-moz-placeholder,
+.search_box input::-webkit-input-placeholder {
+  color: #373737 !important;
+  text-transform: capitalize !important;
+}
