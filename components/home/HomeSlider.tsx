@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export default function HomeSlider() {
   return (
-    <div className="my-4 ">
+    <div className="my-4 main-container">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         loop

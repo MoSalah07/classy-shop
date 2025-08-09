@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getDirection } from "@/i18n/i18n-confige";
 import { getMessages } from "next-intl/server";
 import MobileBar from "@/components/mobilebar";
+import Footer from "@/components/footer";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -57,6 +58,7 @@ export default async function RootLayout({
 
           {children}
           <MobileBar />
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
